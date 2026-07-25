@@ -1,0 +1,26 @@
+{
+  "description": "ToSpec SDK conformance fixtures. See PROTOCOL.md and README.md.",
+  "schema": {
+    "redaction": 1,
+    "token": 1,
+    "batch": 1,
+    "edge": 1
+  },
+  "tokens": "tokens.json",
+  "malformed": "malformed.json",
+  "edge_cases": "edge-cases.json",
+  "redaction": [
+    "redaction/json_hash_pan.json",
+    "redaction/json_mask_email_domain.json",
+    "redaction/json_mask_last4.json",
+    "redaction/json_drop_password.json",
+    "redaction/json_freetext_detect.json",
+    "redaction/xml_hash.json",
+    "redaction/json_malformed_dropped.json",
+    "redaction/headers_request_strip_and_hash.json"
+  ],
+  "batches": [
+    "batches/batch_metadata_only.json",
+    "batches/batch_with_redacted_body.json"
+  ]
+}

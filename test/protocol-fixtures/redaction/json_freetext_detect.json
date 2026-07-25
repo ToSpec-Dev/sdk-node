@@ -1,0 +1,24 @@
+{
+  "name": "json_freetext_detect",
+  "kind": "body",
+  "compiled_ruleset": {
+    "schema": 1,
+    "trie": {},
+    "freetext": {
+      "scanUnknown": true,
+      "detectors": [
+        "email",
+        "pan_luhn"
+      ]
+    },
+    "defaults": {
+      "unknownPiiPolicy": "detect_and_hash"
+    }
+  },
+  "hmac_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hmac_key_version": 1,
+  "content_format": "json",
+  "body_in": "{\"note\":\"charge card 4111111111111111 to jane.doe@example.com\"}",
+  "body_out": "{\"note\":\"charge card tsr_v1_hlgoanxcj6uqucygbnlfkyq3gpbl2x4qfa7bx5jbx3ojilbedigq to tsr_v1_2iobing5fhxz5h6eqhoivrccx4dktwu5o7dsobazvfpjmsb7bevq\"}",
+  "malformed": false
+}

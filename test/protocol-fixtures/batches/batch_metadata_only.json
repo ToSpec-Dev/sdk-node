@@ -1,0 +1,6 @@
+{
+  "name": "batch_metadata_only",
+  "ingest_key": "tsp_ing_fixturekey00000000000000000000000000",
+  "canonical_json": "{\"batch_id\":\"aaaaaaaa-0000-0000-0000-000000000001\",\"events\":[{\"event_id\":\"bbbbbbbb-0000-0000-0000-000000000001\",\"partner_id\":\"cccccccc-0000-0000-0000-000000000001\",\"ts\":\"2026-01-01T00:00:00+00:00\",\"direction\":\"inbound\",\"method\":\"POST\",\"path\":\"/v1/reservations\",\"status\":201,\"latency_ms\":17,\"req_headers\":{\"Accept\":\"application/json\"},\"resp_headers\":{\"Content-Type\":\"application/json\"},\"req_size\":42,\"resp_size\":128,\"content_format\":\"json\",\"redaction_version\":3}]}",
+  "signature": "sha256=c86557b7bff6bd1132eaccbbc12cb396f26cd2fba69d88cfb3b86c2e283375a0"
+}

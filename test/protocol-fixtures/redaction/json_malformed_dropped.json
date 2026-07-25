@@ -1,0 +1,23 @@
+{
+  "name": "json_malformed_dropped",
+  "kind": "body",
+  "compiled_ruleset": {
+    "schema": 1,
+    "trie": {
+      "children": {
+        "card": {
+          "action": "hash"
+        }
+      }
+    },
+    "defaults": {
+      "unknownPiiPolicy": "detect_and_hash"
+    }
+  },
+  "hmac_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hmac_key_version": 1,
+  "content_format": "json",
+  "body_in": "{\"card\":\"4111111111111111",
+  "body_out": null,
+  "malformed": true
+}

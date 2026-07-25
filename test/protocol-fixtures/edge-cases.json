@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "description": "Generated boundary cases shared by redactors and SDKs without storing oversized payloads.",
+  "max_depth": 64,
+  "namespace_collision": {
+    "body": "<root xmlns:fake=\"urn:not-wsse\"><fake:Security><Token>keep</Token></fake:Security></root>",
+    "must_preserve": "keep"
+  },
+  "adversarial_email": {
+    "unit": "a@",
+    "repeat": 50000,
+    "suffix": "!",
+    "max_milliseconds": 500
+  },
+  "mixed_formats": {
+    "request": "json",
+    "response": "xml",
+    "policy": "retain_request_drop_response"
+  }
+}

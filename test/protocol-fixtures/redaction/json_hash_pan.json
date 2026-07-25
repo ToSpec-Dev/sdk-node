@@ -1,0 +1,27 @@
+{
+  "name": "json_hash_pan",
+  "kind": "body",
+  "compiled_ruleset": {
+    "schema": 1,
+    "trie": {
+      "children": {
+        "payment": {
+          "children": {
+            "cardNumber": {
+              "action": "hash"
+            }
+          }
+        }
+      }
+    },
+    "defaults": {
+      "unknownPiiPolicy": "detect_and_hash"
+    }
+  },
+  "hmac_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hmac_key_version": 1,
+  "content_format": "json",
+  "body_in": "{\"payment\":{\"cardNumber\":\"4111111111111111\"}}",
+  "body_out": "{\"payment\":{\"cardNumber\":\"tsr_v1_hlgoanxcj6uqucygbnlfkyq3gpbl2x4qfa7bx5jbx3ojilbedigq\"}}",
+  "malformed": false
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "description": "Binary malformed-input parity vectors. body_base64 is decoded without UTF-8 normalization.",
+  "vectors": [
+    { "name": "json_empty", "content_format": "json", "body_base64": "", "status": "malformed" },
+    { "name": "xml_empty", "content_format": "xml", "body_base64": "", "status": "malformed" },
+    { "name": "json_invalid_utf8", "content_format": "json", "body_base64": "eyJhIjoiwygifQ==", "status": "malformed" },
+    { "name": "xml_invalid_utf8", "content_format": "xml", "body_base64": "PHI+wyg8L3I+", "status": "malformed" },
+    { "name": "xml_doctype", "content_format": "xml", "body_base64": "PCFET0NUWVBFIHIgWzwhRU5USVRZIHggU1lTVEVNICJmaWxlOi8vL2V0Yy9wYXNzd2QiPl0+PHI+Jng7PC9yPg==", "status": "malformed" }
+  ]
+}

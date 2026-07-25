@@ -1,0 +1,30 @@
+name: release
+on:
+  release:
+    types: [published]
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+          cache: npm
+      - run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+      - run: npm ci && npm test && npm run build && npm audit --audit-level=low
+      - name: Standalone package resolution
+        run: |
+          package="$(npm pack --silent)"
+          mkdir /tmp/tospec-consumer
+          cd /tmp/tospec-consumer
+          npm init -y >/dev/null
+          npm install "$GITHUB_WORKSPACE/$package"
+          node -e 'import("@tospec/node").then(m => { if (!m.ConformanceCore) process.exit(1); import.meta.resolve("@tospec/node/express"); import.meta.resolve("@tospec/node/fastify") })'
+      - run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

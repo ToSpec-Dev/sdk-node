@@ -1,0 +1,28 @@
+{
+  "name": "headers_request_strip_and_hash",
+  "kind": "headers",
+  "compiled_ruleset": {
+    "schema": 1,
+    "headers": {
+      "hash": [
+        "x-client-id"
+      ]
+    },
+    "trie": {},
+    "defaults": {
+      "unknownPiiPolicy": "detect_and_hash"
+    }
+  },
+  "hmac_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hmac_key_version": 1,
+  "is_request": true,
+  "headers_in": {
+    "Accept": "application/json",
+    "Authorization": "Bearer sekret",
+    "X-Client-Id": "client-42"
+  },
+  "headers_out": {
+    "Accept": "application/json",
+    "X-Client-Id": "tsr_v1_lu67ffwyyxrr3h2rvwuhznpn372srnebdpzckvqmute3iekgadza"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "batch_with_redacted_body",
+  "ingest_key": "tsp_ing_fixturekey00000000000000000000000000",
+  "canonical_json": "{\"batch_id\":\"aaaaaaaa-0000-0000-0000-000000000002\",\"events\":[{\"event_id\":\"bbbbbbbb-0000-0000-0000-000000000002\",\"partner_id\":\"cccccccc-0000-0000-0000-000000000001\",\"ts\":\"2026-01-01T00:00:00+00:00\",\"direction\":\"inbound\",\"method\":\"POST\",\"path\":\"/v1/payments\",\"status\":200,\"latency_ms\":33,\"req_headers\":{\"Content-Type\":\"application/json\"},\"resp_headers\":{\"Content-Type\":\"application/json\"},\"req_body\":\"eyJwYXltZW50Ijp7ImNhcmROdW1iZXIiOiJ0c3JfdjFfaGxnb2FueGNqNnVxdWN5Z2JubGZreXEzZ3BibDJ4NHFmYTdieDVqYngzb2ppbGJlZGlncSJ9fQ==\",\"req_size\":46,\"resp_size\":0,\"content_format\":\"json\",\"redaction_version\":3}]}",
+  "signature": "sha256=b440ba1bce431051bbc08d17150c42addcb55c66d98e4694d5fe662c35ac2a9e"
+}

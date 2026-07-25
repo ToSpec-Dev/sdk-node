@@ -1,0 +1,27 @@
+{
+  "name": "xml_hash",
+  "kind": "body",
+  "compiled_ruleset": {
+    "schema": 1,
+    "trie": {
+      "children": {
+        "order": {
+          "children": {
+            "card": {
+              "action": "hash"
+            }
+          }
+        }
+      }
+    },
+    "defaults": {
+      "unknownPiiPolicy": "detect_and_hash"
+    }
+  },
+  "hmac_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hmac_key_version": 1,
+  "content_format": "xml",
+  "body_in": "<order><card>4111111111111111</card></order>",
+  "body_out": "<order><card>4111111111111111</card></order>",
+  "malformed": false
+}

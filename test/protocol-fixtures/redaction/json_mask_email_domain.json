@@ -1,0 +1,28 @@
+{
+  "name": "json_mask_email_domain",
+  "kind": "body",
+  "compiled_ruleset": {
+    "schema": 1,
+    "trie": {
+      "children": {
+        "guest": {
+          "children": {
+            "email": {
+              "action": "mask",
+              "mask": "domain"
+            }
+          }
+        }
+      }
+    },
+    "defaults": {
+      "unknownPiiPolicy": "detect_and_hash"
+    }
+  },
+  "hmac_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hmac_key_version": 1,
+  "content_format": "json",
+  "body_in": "{\"guest\":{\"email\":\"jane.doe@example.com\"}}",
+  "body_out": "{\"guest\":{\"email\":\"j***@e***.com\"}}",
+  "malformed": false
+}

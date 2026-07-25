@@ -1,0 +1,78 @@
+{
+  "name": "@tospec/node",
+  "version": "1.0.1",
+  "description": "ToSpec production conformance SDK for Node: Express/Fastify middleware that locally redacts bounded traffic captures and ships gzip-signed batches without waiting for ToSpec I/O on the request path.",
+  "keywords": [
+    "tospec",
+    "conformance",
+    "middleware",
+    "express",
+    "fastify",
+    "redaction",
+    "observability"
+  ],
+  "license": "Apache-2.0",
+  "author": "ToSpec",
+  "homepage": "https://github.com/ToSpec-Dev/sdk-node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToSpec-Dev/sdk-node.git"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./express": {
+      "types": "./dist/express.d.ts",
+      "import": "./dist/express.js"
+    },
+    "./fastify": {
+      "types": "./dist/fastify.d.ts",
+      "import": "./dist/fastify.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@tospec/redact": "file:vendor/tospec-redact-1.0.1.tgz"
+  },
+  "bundleDependencies": [
+    "@tospec/redact"
+  ],
+  "peerDependencies": {
+    "express": "^4.18.0 || ^5.0.0",
+    "fastify": "^4.0.0 || ^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    },
+    "fastify": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "express": "^5.1.0",
+    "fastify": "^5.2.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.10"
+  }
+}
