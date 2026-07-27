@@ -24,8 +24,9 @@ This SDK is the Node port of the .NET reference implementation
    fetched are **dropped, never sent raw**.
 3. **Bounded memory.** A count-and-byte-bounded, drop-oldest queue caps memory under any load; the
    oldest event is evicted (and counted) rather than blocking your handler.
-4. **Kill switch within one poll.** Flip it in the ToSpec portal and emission stops within
-   one config-poll interval.
+4. **Kill switch within one poll.** ToSpec can disable capture for your API remotely, and
+   emission stops within one config-poll interval — no deploy, no restart. Ask ToSpec to
+   flip it; there is no self-serve control for this yet.
 5. **Zero user-visible failures.** Every fault is swallowed to a counter and an `onFault`
    hook. Nothing the SDK does ever throws into your request pipeline.
 
